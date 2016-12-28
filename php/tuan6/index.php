@@ -1,5 +1,6 @@
 <?php 
 	session_start(); //ham tao session
+	var_dump($_SESSION);
 
 ?>
 <?php 

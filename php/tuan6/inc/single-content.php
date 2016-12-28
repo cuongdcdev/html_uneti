@@ -1,21 +1,22 @@
-
    <div class="contentBox">
         <div class="innerBox">
 
-        <?php 
-            if( !empty( $_SESSION["title"] ) ){
-                echo   "<h1>". $_SESSION["title"] . "</h1>";
-            }else{
-                echo "<h1>Nội dung bạn tìm kiếm không tồn tại</h1>";
-            }
-        ?>
+<?php 
+    if( !empty($_GET["id"]) ){
+
+        $index = $_GET["id"];
+
+?>
+        <h1>
+            <?php echo $_SESSION["post_array"][$index]["title"]; ?>
+        </h1>
+
             <div class="contentText">
-            <?php 
-                if( !empty( $_SESSION["content"] ) ){
-                    echo "<p>" . $_SESSION["content"]. "</p>";
-                }else{
-                    echo "<p>Nội dung trống ! </p>";
-                }
-            ?>
-</div>
+                <?php echo $_SESSION["post_array"][$index]["content"]; ?>
+            </div>
             
+
+<?php }else{ ?>
+
+    <h2>noi dung ko ton tai </h2>
+<?php } ?>
