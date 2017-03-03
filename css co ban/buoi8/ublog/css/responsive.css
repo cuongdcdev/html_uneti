@@ -1,0 +1,24 @@
+/* nếu chiều rộng màn hình < 320px thì làm trong ngoặc nhọn  */
+@media screen and ( max-width: 499px ){
+		#main-content{
+			width: 100%;
+
+		}
+
+		#main-sidebar{
+			width: 100%;
+		}
+
+		.menu-items li{
+			width: 30%;
+			float:left;
+		}
+
+		#sidebar{
+			width: 100%;
+			margin: 0px;
+			text-align: center;
+		}
+}
+
+
