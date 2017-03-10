@@ -1,0 +1,44 @@
+@media screen and ( max-width: 573px ){
+	#main-content{
+		width: 100%;
+	}
+
+	#sidebar{
+		width: 100%;
+	}
+}
+
+@media screen and ( max-width: 516px ) and ( min-width: 318px ){
+	.menu li{
+		width: 100%;
+	}
+}
+
+@media screen and ( max-width: 516px ){
+	.menu{
+		position: fixed;
+		right: 0;
+		background: gray;
+		transition: 2s ease all;
+		opacity: 0;
+	}
+
+	#header:hover .menu{
+		opacity: 1;
+		transition: 2s ease all;
+	}
+
+	#header{
+		height: 40px;
+		position: fixed;
+		width: 100%;
+		opacity: 0.4;
+		transition: 0.4s ease all;
+	}
+	#header:hover{
+		opacity: 1;
+		transition: 0.4s ease all;
+	}
+
+	#header .menu
+}
