@@ -1,0 +1,30 @@
+
+body{
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+	background-color: lightblue;
+	padding:20px;
+}
+#page-index table , #page-index td , #page-index th {
+	border: 1px solid black;
+	border-collapse:collapse;
+	padding: 10px;
+}
+
+
+#page-create-post{
+	width: 100%;
+
+}
+#page-create-post input , #page-create-post textarea{
+	width: 100%;
+	padding:20px;
+
+}
+
+#page-create-post button[type=submit]{
+	padding:20px;
+	font-weight: bold;
+	margin:20px;
+}

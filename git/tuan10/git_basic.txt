@@ -1,0 +1,9 @@
+ - Git - version control - hệ quản trị phiên bản 
+
+ - Clone 1 project tu github ve : 
+
+ 			// git clone <duong_dan.git>
+
+ 			vd : git clone https://github.com/duongcuong96/html_uneti.git
+
+ 			
