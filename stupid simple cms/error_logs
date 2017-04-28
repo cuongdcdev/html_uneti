@@ -1,0 +1,6 @@
+[Fri Apr 28 20:08:02.214247 2017] [:error] [pid 5680] [client 127.0.0.1:56304] PHP Notice:  Undefined index: id in /var/www/html/uneti_webdev/stupid simple cms/single.php on line 5
+[Fri Apr 28 20:08:02.214393 2017] [:error] [pid 5680] [client 127.0.0.1:56304] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /var/www/html/uneti_webdev/stupid simple cms/single.php on line 7
+[Fri Apr 28 20:20:03.575236 2017] [:error] [pid 3992] [client 127.0.0.1:56336] PHP Notice:  Undefined index: id in /var/www/html/uneti_webdev/stupid simple cms/single.php on line 5
+[Fri Apr 28 20:20:03.575346 2017] [:error] [pid 3992] [client 127.0.0.1:56336] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given in /var/www/html/uneti_webdev/stupid simple cms/single.php on line 7
+[Fri Apr 28 20:23:11.794560 2017] [:error] [pid 3991] [client 127.0.0.1:56360] PHP Warning:  require_once(footer.php): failed to open stream: No such file or directory in /var/www/html/uneti_webdev/stupid simple cms/index.php on line 50
+[Fri Apr 28 20:23:11.794633 2017] [:error] [pid 3991] [client 127.0.0.1:56360] PHP Fatal error:  require_once(): Failed opening required 'footer.php' (include_path='.:/usr/share/php') in /var/www/html/uneti_webdev/stupid simple cms/index.php on line 50

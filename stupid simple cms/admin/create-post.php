@@ -25,16 +25,9 @@
 
 	}
  ?>
+ 
+<?php require_once 'template/head.php'; ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>tạo bài viết</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-</head>
-
-<body>
 
 	<div id="page-create-post">
 		
@@ -63,5 +56,4 @@
 		</form>
 	</div>
 
-</body>
-</html>
+<?php require_once 'template/footer.php'; ?>
