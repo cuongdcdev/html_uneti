@@ -1,20 +1,19 @@
 <?php 
 	require_once( "inc/lib.php" );
+	
+	require_once 'template/head.php';
+	require_once 'template/header.php';
+
 
 
 	$id = $_GET["id"];
 	$sql = "SELECT * FROM posts WHERE id={$id}";
-	$rs = mysqli_fetch_array(mysqli_query( $conn , $sql ) , MYSQLI_ASSOC);
+	$rs = mysqli_fetch_array( mysqli_query( $conn , $sql ) , MYSQLI_ASSOC);
 
 
 ?>
 
 
-	<?php 
-		require_once 'template/head.php';
-		require_once 'template/header.php';
-
-	?>
 		<div id="content">
 			<div id="main-content">
 					<h1><?php echo $rs["title"];?></h1>

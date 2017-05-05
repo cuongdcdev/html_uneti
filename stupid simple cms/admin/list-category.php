@@ -4,7 +4,7 @@
 	if(  isset($_POST["delete"])  ){
 		$id = $_POST["delete"];
 
-		$sql = "DELETE FROM posts WHERE id = {$id}";
+		$sql = "DELETE FROM category WHERE id = {$id}";
 
 		$rs = mysqli_query( $conn , $sql );
 
@@ -18,50 +18,43 @@
 ?>
 
 
+<style>
+	table tr td{
+		border:1px solid black;
+		border-collapse:  collapse;
+	}
+</style>
+
 
 <body>
 	<div id="page-index">
 		
-		<h1>Trang quản trị admin ! </h1>
+		<h1>Danh sách danh mục </h1>
 
 		<?php require_once("template/menu.php") ;?>
-
 
 	<div id="content">
 		<table>
 			<caption>Quản lí bài viết</caption>
 			<thead>
 				<tr>
-					<th>stt</th>
 					<th>Tên</th>
 					<th>Tóm tắt</th>
-					<th>Tên danh mục</th>
-					<th>Tùy chọn</th>
 				</tr>
 			</thead>
 
 			<tbody>
 				<?php 
-					$query = "SELECT posts.id , posts.title , posts.excerpt ,
-									 category.id AS cid, category.title AS ctitle
-							  FROM 
-							  		 category INNER JOIN  posts WHERE posts.cat_id = category.id  ";
+					$query = "SELECT * FROM category";
 					$rs = mysqli_query( $conn , $query );
 					while( $row = mysqli_fetch_array( $rs , MYSQLI_ASSOC  ) ){
 				?>
 				<tr>
-					<td>1</td>
 					<td><?php echo $row["title"]; ?> </td>
 					<td><?php echo $row["excerpt"];?></td>
-					<td><?php echo $row["ctitle"];?></td>
-					<td><?php echo $row["excerpt"];?></td>
-					<td>
-						<a href="edit-category.php?id=<?php echo $row['cid']; ?>" >
-							 <?php echo $row["ctitle"]; ?> 
-						 </a>
-					 </td>
 
-					<td><a href="edit-post.php?id=<?php echo $row['id']; ?>">Edit</a>/
+
+					<td><a href="edit-category.php?id=<?php echo $row['id']; ?>">Edit</a>/
 
 						<form method="post">
 							<input type="hidden" name="delete" value="<?php echo $row['id'] ?>" />

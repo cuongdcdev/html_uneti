@@ -18,3 +18,12 @@
 
 - admin : tạo phần quản lí thêm sửa xóa menu 
 
+
+
+---- T6 . 3/5/2017 --- 
+
+- lam them phan category.php có tác dụng list toàn bộ các bài viết thuộc cùng 1 danh mục 
+
+- tạo 1 bảng user chứa ít nhất id , username , password  , email 
+
+- nếu còn tg thì tạo thử 1 cái hệ thống login ( dùng $_SESSION )

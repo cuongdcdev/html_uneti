@@ -15,6 +15,21 @@
 		return;
 	}
 
+	if( $_SERVER["REQUEST_METHOD"] == "POST" ){
+		$title = $_POST["title"];
+		$content = $_POST["content"];
+		$excerpt = $_POST["excerpt"];
+		$cat_id = $_POST["category"];
+		$post_id = $rs["id"];
+
+		$sql = "UPDATE posts SET title='{$title}' , excerpt='{$excerpt}' 
+			   , content='{$content}' , cat_id = '{$cat_id}'  WHERE id= '{$post_id}' LIMIT 1 ";
+
+		if( mysqli_query($conn, $sql) ){
+
+		}
+
+	}
 
 ?>
 
@@ -34,6 +49,24 @@
 	<label>
 		Nội dung
 		<textarea name="content"><?php echo $rs["content"];?></textarea>
+	</label>
+
+		<label>
+			<select name="category">
+				<option> Xin chọn danh mục  </option>
+				<?php
+
+
+					$sql = "SELECT id,title FROM category";
+					$rs2 = mysqli_query($conn, $sql);
+
+					while( $row = mysqli_fetch_array($rs2, MYSQLI_ASSOC ) ): ?>
+			 		<option <?php if( $row["id"] == $rs["cat_id"] ) {echo "selected"; }; ?> 
+
+			 		value="<?php echo $row['id']; ?>" > <?php echo $row["title"]; ?> </option>
+			 	
+			 	<?php endwhile ; ?>
+			</select>
 	</label>
 
 	<button type="submit">Cập nhật</button>

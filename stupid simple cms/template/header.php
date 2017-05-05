@@ -6,13 +6,22 @@
 
 				<div class="menu">
 					<ul>
-						<li><a href="#">Công nghệ</a></li>
-						<li><a href="#">Thể thao</a></li>
-						<li><a href="#">Gỉai trí</a></li>
-						<li><a href="#">Về chúng tôi</a></li>
-						<li><a href="#">Liên hệ</a></li>
-						<li><a href="#">Đăng kí</a></li>
-						<li><a href="#">Đăng nhập</a></li>
+			
+
+						<?php 
+							$sql = "SELECT id,title FROM category";
+							$rs = mysqli_query($conn, $sql);
+
+							while( $row = mysqli_fetch_array($rs, MYSQLI_ASSOC) ):
+						?>
+
+						<li>
+							<a title="<?php echo $row['title'];?>" href="<?php echo "category.php?id=".$row['id'] ?>">
+								 <?php echo $row["title"];?>
+							</a>
+						</li>	
+
+					    <?php endwhile;?>
 					</ul>	
 				</div>
 
