@@ -1,6 +1,7 @@
 *{
 	margin: 0px;
 	padding:0px;
+	transition: 1s ease all ;
 }
 
 img{
@@ -112,3 +113,37 @@ body{
 		float:left;
 	}
 /* end menu*/
+
+
+
+/*#### PAGINATION ####*/
+
+#pagination{
+	width: 100%;
+	text-align: center;
+}
+
+#pagination ul li {
+	display: inline-block;
+
+}
+
+#pagination ul li a{
+
+	text-decoration: none;
+	padding:5px;
+	background:blue;
+	color:white;
+}
+
+#pagination ul li a:hover{
+		background:white;
+	color:blue;
+}
+#pagination .active{
+	background:white;
+	color:blue;
+
+}
+
+/*### END PAGINATION ###*/

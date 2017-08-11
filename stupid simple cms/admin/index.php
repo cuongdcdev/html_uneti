@@ -1,6 +1,8 @@
 <?php 
 	require_once( "../inc/lib.php" );
 
+	checkLogin();
+	
 	if(  isset($_POST["delete"])  ){
 		$id = $_POST["delete"];
 
@@ -22,7 +24,7 @@
 <body>
 	<div id="page-index">
 		
-		<h1>Trang quản trị admin ! </h1>
+		<h1>Trang quản trị admin, chào : <?php echo  $_SESSION["username"]; ?> </h1>
 
 		<?php require_once("template/menu.php") ;?>
 

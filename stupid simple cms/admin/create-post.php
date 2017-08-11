@@ -1,6 +1,8 @@
 <?php 
 	require_once("../inc/lib.php");
+	checkLogin();
 
+	
 	if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 		
 		

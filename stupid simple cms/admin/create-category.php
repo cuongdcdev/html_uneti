@@ -1,8 +1,10 @@
 <?php 
+require_once("../inc/lib.php");
+checkLogin();
+
 
 	if( $_SERVER["REQUEST_METHOD"] == "POST" ){
 		
-		require_once("../inc/lib.php");
 		
 
 		$title = $_POST["title"];

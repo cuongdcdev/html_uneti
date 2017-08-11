@@ -1,6 +1,8 @@
 <?php 
 	require_once( "../inc/lib.php" );
+	checkLogin();
 
+	
 	if(  isset($_POST["delete"])  ){
 		$id = $_POST["delete"];
 
