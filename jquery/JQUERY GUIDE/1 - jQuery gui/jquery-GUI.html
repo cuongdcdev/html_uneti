@@ -1,0 +1,345 @@
+<!Doctype HTML>
+<meta charset="utf-8">
+<html>
+    <head>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.snippet.js"></script>
+
+<script type="text/javascript" src="vendor/jquery-confirm/jquery-confirm-master/dist/jquery-confirm.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bs3.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/jquery.snippet.css" /> 
+<link rel="stylesheet" type="text/css" href="css/style-demo.css">
+<link rel="stylesheet" type="text/css" href="vendor/jquery-confirm/jquery-confirm-master/dist/jquery-confirm.min.css"/>
+    <title>jQuery</title>
+    </head>
+    <body>
+
+        <h2 style="font-size:40px;">hướng dẫn sử dụng jQuery cơ bản & những code hay dùng</h2>
+        <p style="font-size:20px;"><a href="jquery-ebook.zip">TÀI LIỆU VỀ jQuery - bấm vào để tải ! </a></p>
+            <p style="font-size:20px;">1.jQuery là gì ? có ăn được không và ăn có ngon không ?</p><br/>
+        <p><u>Trả lời</u> : jQuery là 1 thư viện (Lib/Framework) được xây dựng trên javascript với mục tiêu "nói ít làm nhiều"( Write less/Do more!).<br/>jQuery ko ăn được nhưng rất ngon :3 , nó giúp ta đỡ đau đớn hơn khi code javascript-tức là giúp tiết kiệm thời gian và đỡ phải "hack não" trong khi code nhưng vẫn thực hiện được rất nhiều việc!,giải quyết được vấn đề mỗi trình duyệt thực hiện javascript 1 kiểu khác nhau . NÓI CHUNG,CÁI NÀY MẠNH MẼ, DỄ HỌC,CROSS-BROWSERS!
+            <br/> bạn có thể tìm hiểu thêm về jQuery trong trang chủ : <a href="http://jquery.com"> jQuery.com </a>
+        <br/></p>
+        <br/>
+
+
+    <p style="font-size:30px;">II.Cài đặt jQuery </p>
+        <p style="font-size:20px;">1. hướng dẫn cài đặt:</p> download jQuery tại trang chủ hoặc tại <a href="jquery.js.zip"> ĐÂY </p> </p></a>- tải về sau đó giải nén ra ta được file jquery.js </a>  
+<p style="font-size:20px;">2. cài đặt :</p> nhúng file vừa tải vào đầu phần thẻ <pre>header</pre> trong html :<br/> và nhúng trong cặp thẻ script : 
+<pre class="js">
+       &#x3C;script type=&#x201D;text/javascript&#x201D; src=&#x201D;Link c&#x1EE7;a file javascript&#x201D;&#x3E;&#x3C;/script&#x3E;
+</pre>
+
+
+    <b> ví dụ jQuery đầu tiên :</b>
+    <pre class="js">
+        // jQuery luôn bắt đầu bằng :
+        $(document).ready(function(){
+            
+        })
+// sử dụng để ngăn jquery chạy trước khi trang html được load xong => 
+//tránh gây lỗi 
+</pre>>
+
+<p style="font-size:30px;">III.Căn bản jQuery :</p>
+<h3 style="color:black;font-size:20px">đầu tiên để biết về jQuery chúng ta cần tìm hiểu về cây dom :</h3>
+<p><img src="img/dom.png"></p>
+<p> cũng như CSS , nếu chúng ta giả muốn chọn phần tử  "nút văn bản 1 " thì có thể chọn như sau :</p>
+<pre class="js">
+$(document).ready(function(){
+    $("window document html head body p ").addClass("red");
+})
+//chuyển tất cả tag p nằm trong thẻ body thành màu đỏ 
+//(class red phải định dạng bằng CSS trước)
+<br/>
+
+// TẤT NHIÊN LÀ CHÚNG TA CHẲNG BAO GIỜ CẦN DÙNG CÁI CÁCH DẪN LOẰNG NGOẰNG THẾ
+// chỉ cần :
+    $("p").addClass("red"); 
+// là xong
+
+</pre>
+<a style="font-size:20px" href="di-chuyen-trong-DOM.zip"> bấm vào đây để tìm hiểu thêm về cách jQuery di chuyển trong DOM</a>
+<p style="font-size:20px;">2.bộ chọn trong jQ :</p><br/> jQuery luôn bắt đầu bằng kí tự dollar sign : <strong>$</strong> hoặc bê nguyên chữ <strong>jQuery</strong> vào để   chọn một một phần tử trong cấu trúc DOM (Document Object Model) của tài liệu html,bộ chọn này tương tự như CSS  <br/>
+    ví dụ : chuẩn bị 1 file html :<br/>
+<img src="img/html.PNG">
+    <br/>Sau đó chuẩn bị 1 đoạn script : 
+    <pre class="js">
+            $(document).ready(function(){
+                $("#button").click(function(){
+                  $("p").hide();  
+                })
+            })
+    // ẩn tất cả các thẻ p ở trên 
+    </pre><br/>
+<p> Giải thích : chúng ta bảo jQuery rằng : êku,tìm cho anh thằng nào có id="button" (dấu # là id , dấu . là class giống CSS)rồi sau đó bảo nó : "bao giờ người dùng ấn vào chú [ sự kiện <pre >.click()</pre> ] thì chú phải chạy cái function ở dưới cho anh!"</p>
+<p> function ở dưới cũng tương tự,tìm những thẻ p sau đó ẩn nó đi</p><br/>
+ngoài <strong>hide</strong> ra chúng ta 
+cũng có rất nhiều sự kiện như <strong>click</strong>…. Cũng như những hiệu ứng <strong>fadeOut</strong>, <strong>hide</strong>, <strong>fadeIn</strong>,… .... mà chúng ta có thể tìm hiểu thêm ở tài liệu đính kèm<br/>
+
+<p style="font-size:20px;"> 3. 1 số code hay dùng : </p>
+    <h3 style="color:black;font-size:20px">Làm menu đa cấp với hiệu ứng jQuery: </h3>
+demo <br/>: <iframe src="html/menu-bar.html" width = "1000px" height="auto";></iframe>
+
+<img src="img/nav-fx.png"> <br/>
+<h1 style="color:black;font-size:20px"> Làm menu không bị trôi khi kéo chuột :</h1>
+<h4>demo : </h4><br/>
+<iframe src="html/fixed-menu.htm" width="1000px" height:"800px"></iframe>
+<img src="img/fixed-nav.png"><br/>
+<h4>đây là class f-nav</h4>
+<pre class="styles">
+.f-nav{
+    z-index: 9999;
+    position: fixed; 
+    top: 0;
+    width: 100%;
+}
+/* làm menu của  bám chặt vào đoạn đầu của cửa sổ trình duyệt
+*/
+</pre>
+
+
+
+<h2 style="font-size:40px;">4.Tích hợp plugin slider ảnh vào = jquery </h2>
+
+<p>
+    Điểm mạnh của Javascript cũng như JQuery là hệ thống plugin rất nhiều, có thể sử dụng dùng làm nhiều mục đích, 
+    trong ví dụ này chúng ta sẽ demo 2 plugin slides ảnh.
+
+</p>
+
+<p>
+    Lưu ý: mỗi plugin có cách tích hợp vào là khác nhau, nên muốn sử dụng được phải đọc ví dụ trên trang chủ của chúng
+
+</p>
+
+<h3>
+    Tích hợp plugin lightbox2 
+</h3>
+
+<p>
+    
+    Tích hợp lightbox2, theo link: link: http://lokeshdhakar.com/projects/lightbox2/   
+
+
+<p>    hướng dẫn chung tích hợp: đầu tiên là tải nó về -> gỉai nén ra, nhét tất cả vào folder lightbox2 ( tên plugin luôn), tạo 1 folder vendor(ngang hàng với folder js), nhét lightbox2 trong folder vendor đó-> tiến hành nhúng css của nó và js của nó vào
+    -> làm theo  hd dưới đây -> ok 
+
+</p>
+
+<p>
+    *Lưu ý: Folder vendor là nơi sẽ chứa các plugin mà mình tải về để đễ quản lí hơn
+
+</p>
+
+    </br/>
+   sau khi nhúng 2 file: lightbox.min.js và lightbox.min.css ( file có đuôi .min là những file đã được nén gỉam dung lượng -> tải ưeb nhanh hơn )
+    
+    <pre class="htmlCode">
+        &#x3C;a  href=&#x22;duong-dan-toi-file-anh&#x22; data-lightbox=&#x22;t&#xEA;n file &#x1EA3;nh&#x22;&#x3E;
+            &#x3C;img  src=&#x22;&#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i file &#x1EA3;nh&#x22; alt=&#x22;image-1&#x22; /&#x3E;
+         &#x3C;/a&#x3E;
+    </pre>
+
+    <br>
+    Thế là chúng ta đã có <b>1</b> cái image lightbox, như này( tất cả source code trong folder html của nhé)
+
+<iframe src="html/lightbox2.html" width="100%" height="600px"></iframe>
+
+
+<p>OK, Thế nếu chúng ta muốn làm 1 chuỗi các slides( tức là kiểu như có 1 bộ sưu tập ảnh trong 1 album ý :) ) thì sao? </p>
+
+<p> làm như này, chỉ cần đặt gía trị data-lightbox='Cùng tên' là dc  </p>
+
+<pre class="htmlCode">
+            &#x3C;a  href=&#x22;duong-dan-toi-file-anh&#x22; data-lightbox=&#x22;t&#xEA;n album, nh&#x1EDB; &#x111;&#x1EC3; gi&#x1ED1;ng nhau&#x22; data-title=&#x22;ti&#xEA;u &#x111;&#x1EC1; 1 &#x22;&#x3E;
+                &#x3C;img  src=&#x22;&#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i file &#x1EA3;nh 1&#x22; alt=&#x22;image-1&#x22; /&#x3E;
+             &#x3C;/a&#x3E;
+
+             &#x3C;a  href=&#x22;duong-dan-toi-file-anh&#x22; data-lightbox=&#x22;t&#xEA;n album, nh&#x1EDB; &#x111;&#x1EC3; gi&#x1ED1;ng nhau&#x22; data-title=&#x22;ti&#xEA;u &#x111;&#x1EC1; 2 &#x22;&#x3E;
+                &#x3C;img  src=&#x22;&#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i file &#x1EA3;nh 2&#x22; alt=&#x22;image-2&#x22; /&#x3E;
+             &#x3C;/a&#x3E;
+        
+            &#x3C;a  href=&#x22;duong-dan-toi-file-anh&#x22; data-lightbox=&#x22;t&#xEA;n album, nh&#x1EDB; &#x111;&#x1EC3; gi&#x1ED1;ng nhau&#x22; data-title=&#x22;ti&#xEA;u &#x111;&#x1EC1; 3 &#x22;&#x3E;
+                &#x3C;img  src=&#x22;&#x111;&#x1B0;&#x1EDD;ng d&#x1EAB;n t&#x1EDB;i file &#x1EA3;nh 3&#x22; alt=&#x22;image-3&#x22; /&#x3E;
+             &#x3C;/a&#x3E;
+</pre>
+
+<p>Kết quả sẽ giống cái A Four Image Set trong demo ý :)</p>
+
+<p>Mở rộng: Tìm cách tích hợp thằng này vào thành slider ảnh nhé: http://kenwheeler.github.io/slick/, đây là 1 slider rất đẹp, anh toàn dùng trong dự án( với cả cái lightox2 cũng hay dùng nữa ) </p>
+
+
+<h2 style="font-size:40px;">5.Tích hợp plugin jQuery jquery-confirm vào  </h2>
+
+<b>Demo: </b>
+
+
+<b>Cài đặt: lên trang chủ: https://craftpip.github.io/jquery-confirm/, 
+down về cài thôi, 
+nhớ tạo 1 folder tên jquery-confirm để trong vendor rồi nhúng file vào nhé, file dùng thì ở trong folder disc !  </b>
+
+<b>Cách dùng cơ bản: </b>
+
+<pre class="js">
+
+
+//show alert 
+     $.alert({
+        title: &#x27;Alert!&#x27;,
+        content: &#x27;auto alert, c&#xE1;i n&#xE0;y d&#xF9;ng nh&#x1B0; alert() c&#x1EE7;a js  !&#x27;,
+    });
+
+    //show user confirm:
+
+$.confirm({
+    title: &#x27;confirm !&#x27;,
+    content: &#x27;Confirm :v &#x27;,
+    buttons: {
+        confirm: function () { // h&#xE0;m n&#xE0;y ch&#x1EA1;y khi usser &#x111;&#xE3; &#x1EA5;n confirm
+            $.alert(&#x27;ok, m&#xE0;y &#x111;&#xE3; x&#xE1;c nh&#x1EAD;n !&#x27;); //show alert l&#xE0; &#x111;&#xE3; x&#xE1;c nh&#x1EAD;n
+        },
+        cancel: function () {
+            $.alert(&#x27;&#x111;&#xE3; h&#x1EE7;y!&#x27;);
+        }
+    }
+});
+
+//show 1 dialog th&#xF4;ng b&#xE1;o g&#xEC; &#x111;&#xF3;
+
+$.dialog({
+    title: &#x27;Th&#xF4;ng b&#xE1;o !&#x27;,
+    content: &#x27;Th&#xF4;ng b&#xE1;o tr&#x1EA3; ti&#x1EC1;n &#x111;i&#x1EC7;n, ti&#x1EC1;n m&#x1EA1;ng :V !&#x27;,
+});
+
+
+// ^^^ T&#x1EA5;t c&#x1EA3; c&#xE1;c h&#xE0;nh &#x111;&#x1ED9;ng tr&#xEA;n s&#x1EBD; ch&#x1EA1;y khi tr&#xEC;nh duy&#x1EC7;t t&#x1EA3;i xong web, v&#x1EAD;y n&#x1EBF;u mu&#x1ED1;n th&#xEA;m action khi 1 c&#xE1;i n&#xFA;t dc b&#x1EA5;m m&#x1EDB;i hi&#x1EC7;n th&#xEC; sao ? 
+
+//g&#x1EAF;n s&#x1EF1; ki&#x1EC7;n cho n&#xFA;t l&#xE0; xong 
+
+$( &#x22;T&#xEC;m t&#x1EDB;i c&#xE1;i n&#xFA;t&#x22; ).on(&#x22;click&#x22; , function(){
+     $.alert({
+        title: &#x27;Alert!&#x27;,
+        content: &#x27;auto alert, c&#xE1;i n&#xE0;y d&#xF9;ng nh&#x1B0; alert() c&#x1EE7;a js  !&#x27;,
+    });
+
+});
+</pre>
+
+<button id="btn18" class="btn btn-lg btn-danger center-block" style="margin-top:50px;margin-bottom: 50px; ">
+    Em đã đủ 18+ :V 
+</button>
+
+
+
+<pre class="js">
+
+$(&#x22;#btn18&#x22;).on(&#x22;click&#x22; , function(){
+        $.confirm({
+        title: &#x27;Prompt!&#x27;,
+        content: &#x27;&#x27; +
+        &#x27;&#x3C;form  action=&#x22;&#x22; class=&#x22;formName&#x22;&#x3E;&#x27; +
+        &#x27;&#x3C;div class=&#x22;form-group&#x22;&#x3E;&#x27; +
+        &#x27;&#x3C;label&#x3E;B&#x1EA1;n &#x111;&#xE3; &#x111;&#x1EE7; 18+ ? &#x3C;/label&#x3E;&#x27; +
+        &#x27;&#x3C;img src=&#x22;img/fbi.jpg&#x22; style=&#x22;max-width:100%; display:block; width:auto&#x22; /&#x3E;&#x27; +
+        &#x27;&#x3C;/div&#x3E;&#x27; +
+        &#x27;&#x3C;/form&#x3E;&#x27;,
+        buttons: {
+            formSubmit: {
+                text: &#x27;OK&#x27;,
+                btnClass: &#x27;btn-blue&#x27;,
+                action: function () {
+    
+                    $.alert(&#x27;Ok, v&#xE0;o &#x111;i ! &#x27;);
+                }
+            },
+            cancel: function () {
+                $.alert(&#x22;B&#x1EA1;n ko n&#xEA;n v&#xE0;o &#x111;&#xE2;y v&#xEC; ch&#x1B0;a &#x111;&#x1EE7; 18 -_- &#x22;);
+            },
+        }
+    });
+});
+
+</pre>
+
+
+<h2 style="font-size:40px; margin-top:100px; margin-bottom: 50px">Jquery và AJAX, phần này nói hơi loằng ngoằng nên buổi sau nói</h2>
+
+
+<a href="https://freetuts.net/hoc-php/hoc-ajax" class="btn btn-blue btn-lg btn-info">Tham khảo ở đây </a>
+
+
+
+
+<script>
+    $(document).ready(function(){
+
+        $("#btn18").on("click" , function(){
+                $.confirm({
+                title: 'Prompt!',
+                content: '' +
+                '<form action="" class="formName">' +
+                '<div class="form-group">' +
+                '<label>Bạn đã đủ 18+ ? </label>' +
+                '<img src="img/fbi.jpg" style="max-width:100%; display:block; width:auto" />' +
+                '</div>' +
+                '</form>',
+                buttons: {
+                    formSubmit: {
+                        text: 'OK',
+                        btnClass: 'btn-blue',
+                        action: function () {
+            
+                            $.alert('Ok, vào đi ! ');
+                        }
+                    },
+                    cancel: function () {
+                        $.alert("Bạn ko nên vào đây vì chưa đủ 18 -_- ");
+                    },
+                }
+            });
+        });
+
+
+            $("#btnAlert").on("click" ,function(){
+                $.alert("Alert, ahihi :V ");
+            } );
+    });
+</script>
+
+
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+$("pre.htmlCode").snippet("html" , {
+    style: "night" , transparent:false
+});
+    // Finds <pre> elements with the class "htmlCode"
+    // and snippet highlights the HTML code within.
+$("pre.styles").snippet("css",{style:"greenlcd"});
+    // Finds <pre> elements with the class "styles"
+    // and snippet highlights the CSS code within
+    // using the "greenlcd" styling.
+$("pre.js").snippet("javascript",{style:"night",transparent:false
+                                  ,showNum:false});
+
+
+    // Finds <pre> elements with the class "js"
+    // and snippet highlights the JAVASCRIPT code within
+    // using a random style from the selection of 39
+    // with a transparent background
+    // without showing line numbers.
+});      
+</script>
+
+
+
+
+
+</body>
