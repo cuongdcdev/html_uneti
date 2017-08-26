@@ -1,37 +1,18 @@
-// $("#btn").on("click" , function(){
-// 	// alert("xin chao, ban vua bam nut ! ");
-// 	$("#header").css( "color" , "red" ).css("backgroundColor" , "blue")
-// 									  .css("textDecoration" ,"underline" )
-// 									  .css("fontSize" , "45px")
-// 									  .slideUp("slow");
-// 	// $("#header").slideToggle();
-// 	// $("#header").fadeToggle();
-// 	// $("#header").slideUp();
 
 
-// });
 
-// $("#btn2").on("click" , function(){
-// 	$("#header").slideDown();
-// });
 
-// $("#btn2").on("hover" , function(){
-// //hover vao 
-// 	$("#header").css("backgroundColor" , "violet");
-// },function(){
-// //hover ra 
-// 	$("#header").css("backgroundColor" , "green");
-// });
+$("#btn2").click(function(){
+    $("#h2").append( $("#inputName").val() );
+    // console.log("gender val: " + $("input[name=gender]:checked").val() );
 
-// $("#btn2").hover(function(){
-// 	$("#header").css("backgroundColor" , "violet");
-// } , function(){
-// $("#header").css("backgroundColor" , "red");
-// });
+    $("#ten").val(( "giới tính: " +$("input[name=gender]:checked").val()  ));
+     console.log($( "div#wrap-input" ).html());
 
-$("#btn").on("click", function(){
-	$(".header, .hed , .bg")
-			.css("color" , "blue")
-			.css("backgroundColor" , "yellow")
-			.slideToggle("slow");
-});
+    $("#text").text("<b>Tuấn ml</b>");
+})
+
+
+$("#btn").click(function(){
+    $("#h2").prepend( $("#inputName").val() ); 
+})
