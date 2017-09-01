@@ -1,5 +1,4 @@
 <?php
-var_dump( $_SERVER );
 if( $_SERVER["REQUEST_METHOD"]  == "POST" ){
 $a = $_POST["a"];
 	$b = $_POST["b"];
